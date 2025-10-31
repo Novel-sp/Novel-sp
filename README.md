@@ -1,121 +1,129 @@
-<h1 align="center">NOSE: NOvel Species IdEntification </h1>
+# Gene Catalog
 
-<p align="center">
-   <a href="https://snakemake.readthedocs.io/"><img src="https://img.shields.io/badge/Snakemake-Workflow-green" alt="Snakemake"></a>
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10-blue" alt="Python"></a>
-</p>
+![Version](https://img.shields.io/badge/version-0.6.0-brightgreen)
 
-
-
+<!-- [![Documentation Status](https://img.shields.io/readthedocs/camp-gene_catalog)](https://camp-documentation.readthedocs.io/en/latest/gene_catalog.html) -->
+<!-- [![Documentation Status](https://img.shields.io/badge/docs-unknown-yellow.svg)]()-->
 
 ## Overview
-**NOSE (Novel Species Identification Pipeline)** is a Snakemake-based workflow designed for identifying and classifying novel microbial species from genomic and metagenomic datasets. It is a collection of modular workflows that can be executed in sequence as per user requirements.  
 
-The first module - **Genome Summary and Classification Workflow** - automates data preprocessing, taxonomic classification, and phylogenetic analysis using tools like **GTDB-Tk** and **CAT**. NOSE ensures **reproducibility, scalability, and efficiency** in analyzing large-scale metagenomic data and genome assemblies.
+This module is designed to function as both a standalone gene catalog pipeline as well as a component of the larger CAMP metagenome analysis pipeline. As such, it is both self-contained (ex. instructions included for the setup of a versioned environment, etc.), and seamlessly compatible with other CAMP modules (ex. ingests and spawns standardized input/output config files, etc.). 
 
-### Key Integrations
--  **Genome quality assessment** - CheckM2, QUAST  
-- **Taxonomic classification** - GTDB-Tk, CAT  
-- **Relatedness analysis** - ANI, AAI, POCP  
-- **Phylogenetic tree construction** - GToTree  
-   **Metagenomic abundance estimation** - Sourmash  
-
-<h2>Features</h2>
-
-- **Genome QC & Assembly Metrics** - Assess completeness, contamination, and N50 using <b>CheckM2</b> and <b>QUAST</b>  
-- **Taxonomic Classification** - Assign taxonomy with <b>GTDB-Tk</b> (bacteria/archaea) and <b>CAT</b> (contigs)  
-- **Relatedness Analysis** - Compute <b>ANI, AAI, POCP</b> to detect novel species  
-- **Phylogenetic Analysis** - Build trees with <b>GToTree</b>  
-- **Metagenomic Mapping** - Perform sketching and mapping with <b>Sourmash</b>  
-
+This module generates and functionally annotates a gene catalog from assembled contigs. It is both self-contained (ex. instructions included for the setup of a versioned environment, etc.), and compatible with other CAMP modules (ex. ingests and spawns standardized input/output config files, etc.). 
 
 ## Installation
-Ensure you have Snakemake and all required dependencies installed before running the pipeline.
 
-### Prerequisites
-- Snakemake  
-- Conda (recommended for managing dependencies)
+> [!TIP]
+> All databases used in CAMP modules will also be available for download on Zenodo (link TBD).
 
-<h2>Step 1 - Clone the repository</h2>
+### Install `conda`
 
-```bash
-git clone https://github.com/Prithvi-0805/NOSE.git
-cd NOSE
-
+If you don't already have `conda` handy, we recommend installing `miniforge`, which is a minimal conda installer that, by default, installs packages from open-source community-driven channels such as `conda-forge`.
+```Bash
+# If you don't already have conda on your system...
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
 ```
 
-<h2>Step 2 - Create Conda environments </h2>
-
-```bash
-conda create -y -n project python=3.10
-conda activate project
-
+Run the following command to initialize Conda for your shell. This will configure your shell to recognize conda activate. 
+```Bash
+conda init
 ```
 
+Restart your terminal or run:
+```Bash
+source ~/.bashrc  # For bash users
+source ~/.zshrc   # For zsh users
+```
+### Setting up the Gene Cataloguing Module
 
-<h2> Configuration</h2>
-
-```bash
-Modify `config.yaml` to specify:
-- Input genome files  
-- Output directories  
-- Database paths (GTDB-Tk, CAT, etc.)
-
-This ensures proper workflow execution before starting the pipeline.
+1. Clone repo from [Github](<https://github.com/Meta-CAMP/camp_gene-catalog>).
+```Bash
+git clone https://github.com/Meta-CAMP/camp_gene-catalog
 ```
 
-<h2>Workflow</h2>
+2. Set up the rest of the module interactively by running `setup.sh`. This will install the necessary conda environments (if they have not been installed already) and generate `parameters.yaml` as well as set up the paths in `test_data/samples.csv` for testing. 
+```Bash
+cd camp_gene-catalog/
+source setup.sh
 
-* **Raw Genomes**  → **Genome QC & Assembly Metrics** (CheckM2/QUAST)
-* **Taxonomic Classification** (GTDB-Tk/CAT)
-* **Relatedness Analysis** (ANI/AAI/POCP)
-* **Phylogenetic Placement** (GToTree)
-*  **Metagenomic Mapping** (Sourmash)
-* **Identify Novel Species Candidates**
+# If you encounter issues where conda activate is not recognized, follow these steps to properly initialize Conda
+conda init
+source ~/.bashrc # or source ~/.zshrc
+```
 
-<h2>Usage</h2>
+3. Make sure the installed pipeline works correctly. With 10 threads and a maximum of 40 GB allocated, the test dataset should finish in approximately 80 minutes.
+```Bash
+# Run tests on the included sample dataset
+conda activate camp
+python /path/to/camp_gene-catalog/workflow/gene-catalog.py test
+```
 
-Run the full pipeline:
+## Using the Module
 
-snakemake --cores 8 --use-conda
+**Input**: `/path/to/samples.csv` provided by the user.
 
+**Output**: TODO
 
+### Module Structure
+```
+└── workflow
+    ├── Snakefile
+    ├── gene-catalog.py
+    ├── utils.py
+    ├── __init__.py
+    └── ext/
+        └── scripts/
+```
+- `workflow/gene-catalog.py`: Click-based CLI that wraps the `snakemake` and other commands for clean management of parameters, resources, and environment variables.
+- `workflow/Snakefile`: The `snakemake` pipeline. 
+- `workflow/utils.py`: Sample ingestion and work directory setup functions, and other utility functions used in the pipeline and the CLI.
+- `ext/`: External programs, scripts, and small auxiliary files that are not conda-compatible but used in the workflow.
 
-<h2>FAQ</h2> <details> <summary><b>Q1: What input formats are supported?</b></summary> FASTA, GenBank, and NCBI genome accessions </details> <details> <summary><b>Q2: Can I run NOSE on large datasets?</b></summary> Yes, Snakemake supports parallel processing efficiently. </details> <details> <summary><b>Q3: How do I update reference databases?</b></summary> Follow the instructions in <code>databases/README.md</code> </details> <details> <summary><b>Q4: How do I cite NOSE?</b></summary> See <code>docs/citations.txt</code> </details>
-<h2>Troubleshooting</h2>
+### Running the Workflow
 
-GTDB-Tk not found → Ensure GTDBTK_DATA_PATH is set
+1. Make your own `samples.csv` based on the template in `configs/samples.csv`. Sample test data can be found in `test_data/`. 
+    - `samples.csv` requires either absolute paths or paths relative to the directory that the module is being run in
 
-Pipeline stops on low-quality genome → Adjust config.yaml thresholds
+2. Update the relevant parameters in `configs/parameters.yaml`.
 
-Memory errors →  Reduce threads or increase RAM
+3. Update the computational resources available to the pipeline in `configs/resources.yaml`. 
 
-<h2> Contributing</h2>
+#### Command Line Deployment
 
-Contributions are welcome! Please follow the steps below to contribute:
+To run CAMP on the command line, use the following, where `/path/to/work/dir` is replaced with the absolute path of your chosen working directory, and `/path/to/samples.csv` is replaced with your copy of `samples.csv`. 
+    - The default number of cores available to Snakemake is 1 which is enough for test data, but should probably be adjusted to 10+ for a real dataset.
+    - Relative or absolute paths to the Snakefile and/or the working directory (if you're running elsewhere) are accepted!
+    - The parameters and resource config YAMLs can also be customized.
+```Bash
+conda activate camp
+python /path/to/camp_gene-catalog/workflow/gene-catalog.py \
+    (-c number_of_cores_allocated) \
+    (-p /path/to/parameters.yaml) \
+    (-r /path/to/resources.yaml) \
+    -d /path/to/work/dir \
+    -s /path/to/samples.csv
+```
 
-1. **Fork** this repository  
-2. **Create a new branch** for your feature or bug fix  
-   ```bash
-   git checkout -b feature-name
-   ```
-3. **Commit** your changes with a clear message  
-   ```bash
-   git commit -m "Add: short description of change"
-   ```
-4. **Push** to your branch  
-   ```bash
-   git push origin feature-name
-   ```
-5. **Submit a Pull Request (PR)** describing your updates
+#### Slurm Cluster Deployment
 
-Your contributions help improve and expand the NOSE pipeline for the research community.
+To run CAMP on a job submission cluster (for now, only Slurm is supported), use the following.
+    - `--slurm` is an optional flag that submits all rules in the Snakemake pipeline as `sbatch` jobs. 
+    - In Slurm mode, the `-c` flag refers to the maximum number of `sbatch` jobs submitted in parallel, **not** the pool of cores available to run the jobs. Each job will request the number of cores specified by threads in `configs/resources/slurm.yaml`.
+```Bash
+conda activate camp
+sbatch -J jobname -o jobname.log << "EOF"
+#!/bin/bash
+python /path/to/camp_gene-catalog/workflow/gene-catalog.py --slurm \
+    (-c max_number_of_parallel_jobs_submitted) \
+    (-p /path/to/parameters.yaml) \
+    (-r /path/to/resources.yaml) \
+    -d /path/to/work/dir \
+    -s /path/to/samples.csv
+EOF
+```
 
-<h2> Citations</h2>
+## Credits
 
-<a href="https://github.com/AstrobioMike/GToTree">GToTree</a>
-
-<a href="https://github.com/Ecogenomics/GTDBTk">GTDB-Tk</a>
-
-<a href="https://github.com/dib-lab/sourmash">Sourmash</a>
+- This package was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter>) as a simplified version of the [project template](https://github.com/audreyr/cookiecutter-pypackage>).
+- Free software: MIT
 
