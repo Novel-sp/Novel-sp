@@ -14,4 +14,4 @@ This module focuses on evaluating genome assemblies for quality and taxonomic id
 It integrates **QUAST** for assembly quality metrics, **CheckM2** and **EukCC** for genome completeness and contamination assessment, and **GTDB-Tk** for taxonomic classification.  
 A custom Python script compiles all outputs into a structured summary report, enabling streamlined downstream analysis.
 
-Module 1 - **[Genome Summary and Classification Workflow](https://github.com/Novel-sp/Genome-summary-and-classification-workflow)**.
+Module 1 - **[ Genome Summary and Classification Workflow](https://github.com/Novel-sp/Genome-summary-and-classification-workflow)**
