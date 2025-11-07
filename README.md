@@ -1,9 +1,6 @@
 # Novel Species Identification
 
-The NOSE pipeline is designed to automate the identification of novel microbial species using genome-resolved metagenomics.  
-Built on the Snakemake framework, it integrates multiple bioinformatics tools into a unified, reproducible workflow.  
-NOSE simplifies the process of quality assessment, taxonomic classification, and functional analysis for metagenomic assemblies, ensuring consistency and scalability across projects.
-
+This novel species identification pipeline is designed to automate the discovery of new microbial species using genome-resolved metagenomics. Built on the Snakemake framework, it integrates multiple bioinformatics tools into a unified, reproducible workflow. The pipeline streamlines quality assessment, taxonomic classification, and functional analysis of metagenomic assemblies, ensuring consistency, scalability, and accuracy across large-scale microbial studies.
 ---
 
 ## Available Analysis Modules
