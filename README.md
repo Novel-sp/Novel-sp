@@ -12,3 +12,4 @@ It integrates **QUAST** for assembly quality metrics, **CheckM2** and **EukCC** 
 A custom Python script compiles all outputs into a structured summary report, enabling streamlined downstream analysis.
 
 Module 1 - **[ Genome Summary and Classification Workflow](https://github.com/Novel-sp/Genome-summary-and-classification-workflow)**
+Module 2 - **[Novelty assessment through OGRI]**
