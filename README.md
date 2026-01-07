@@ -4,12 +4,7 @@ This novel species identification pipeline is designed to automate the discovery
 
 
 ## Available Analysis Modules
-
-### Genome Summary and Classification
-
-This module focuses on evaluating genome assemblies for quality and taxonomic identity.  
-It integrates **QUAST** for assembly quality metrics, **CheckM2** and **EukCC** for genome completeness and contamination assessment, and **GTDB-Tk** for taxonomic classification.  
-A custom Python script compiles all outputs into a structured summary report, enabling streamlined downstream analysis.
+## NOSE Modules
 
 Module 1 - **[ Genome Summary and Classification Workflow](https://github.com/Novel-sp/Genome-summary-and-classification-workflow)**
 
