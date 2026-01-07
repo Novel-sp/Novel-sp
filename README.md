@@ -21,4 +21,4 @@ Module 4 - **[Metabolic Mapping](https://github.com/Novel-sp/Metabolic-Mapping)*
 
 Module 5 - **[Functional Characterization](https://github.com/Novel-sp/Functional-Characterization)**
 
-Module 6 -
+Module 6 - **[Modeling]**
