@@ -16,3 +16,9 @@ Module 1 - **[ Genome Summary and Classification Workflow](https://github.com/No
 Module 2 - **[Novelty assessment through OGRI](https://github.com/Novel-sp/Genome-related-indices)**
 
 Module 3 - **[Phylogenetic tree](https://github.com/Novel-sp/Phylogenetic-tree)**
+
+Module 4 - **[Metabolic Mapping](https://github.com/Novel-sp/Metabolic-Mapping)**
+
+Module 5 - **[Functional Characterization](https://github.com/Novel-sp/Functional-Characterization)**
+
+Module 6 -
