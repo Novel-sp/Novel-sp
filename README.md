@@ -1,14 +1,14 @@
 # Novel Species Identification (NOSE)
 
 NOSE is a modular, Snakemake-based bioinformatics toolkit designed to support the identification and characterization of novel microbial species from genome-resolved datasets.
-The toolkit integrates multiple analysis stages—including genome quality assessment, taxonomic classification, novelty assessment, phylogenetics, metabolic mapping, and functional characterization—within a reproducible and scalable workflow.
+The toolkit integrates multiple analysis stages-including genome quality assessment, taxonomic classification, novelty assessment, phylogenetics, metabolic mapping, and functional characterization-within a reproducible and scalable workflow.
 
 NOSE is optimized for execution on Linux servers and HPC environments and is designed to be usable by researchers without prior programming experience, relying on configuration-driven execution rather than manual scripting.
 
 
 ## Prerequisites
 ### Computational Prerequisites
-• Access to a Unix-like system (Linux workstation or HPC login node)<br>
+• Access to a Unix-like system (Linux workstation or HPC server (or) login node)<br>
 • Internet connectivity (required for environment setup and database downloads)<br>
 • Sufficient compute resources (CPU and memory requirements vary by module)<br>
 
