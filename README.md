@@ -58,7 +58,7 @@ Notes:
 ----
 ## NOSE Modules
 
-Each module is independent and documented in its own repository.
+Each module is independent and documented in its own repository.<br>
 Click on a module to view detailed usage instructions.
 
 Module 1 - **[ Genome Summary and Classification Workflow](https://github.com/Novel-sp/Genome-summary-and-classification-workflow)** <br>
