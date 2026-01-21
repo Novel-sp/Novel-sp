@@ -8,19 +8,16 @@ NOSE is optimized for execution on Linux servers and HPC environments and is des
 
 ## Prerequisites
 ### Computational Prerequisites
-Access to a Unix-like system (Linux workstation or HPC login node)
+• Access to a Unix-like system (Linux workstation or HPC login node)
+• Internet connectivity (required for environment setup and database downloads)
+• Sufficient compute resources (CPU and memory requirements vary by module)
 
-Internet connectivity (required for environment setup and database downloads)
-
-Sufficient compute resources (CPU and memory requirements vary by module)
 ### Software Prerequisites
-Conda (Miniconda or Anaconda) must be installed
+• Conda (Miniconda or Anaconda) must be installed
+• Ability to execute bash scripts (.sh files)
+• All workflow execution is handled through Snakemake; no direct code modification is required.
 
-Ability to execute bash scripts (.sh files)
-
-All workflow execution is handled through Snakemake; no direct code modification is required.
-
-  ## Create a Snakemake environment and installation
+## Create a Snakemake environment and installation
 
 These instructions assume a Unix-like system with internet access.
 Only one environment setup method is required.
