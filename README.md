@@ -48,11 +48,9 @@ Two common routes are shown: using conda (Miniconda/Anaconda) or micromamba. Use
     ```bash
        - snakemake --version
     ```
-Notes:
+Note:
 - All NOSE modules are executed using this single Snakemake environment
-
 - The workflows rely on Snakemake’s --use-conda feature to automatically create rule-specific environments
-
 - Ensure conda or mamba is available within the active Snakemake environment
 
 ----
