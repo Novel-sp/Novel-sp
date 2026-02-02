@@ -21,11 +21,10 @@ NOSE is optimized for execution on Linux servers and HPC environments and is des
 
 These instructions assume a Unix-like system with internet access.
 Only one environment setup method is required.
-Two common routes are shown: using conda (Miniconda/Anaconda) or micromamba. Use one method only.
 
-1. Install Miniconda (if not already installed)
-   - Download and install from https://docs.conda.io/en/latest/miniconda.html
-   - Restart your shell or run `source ~/.bashrc` (or equivalent).
+1.Install (Linux / HPC)
+ ```bash
+ ```
 
 2. (Recommended) Install mamba for faster environment creation
    ```bash
