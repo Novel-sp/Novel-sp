@@ -8,7 +8,7 @@ NOSE is optimized for execution on Linux servers and HPC environments and is des
 
 ## Prerequisites
 ### Computational Prerequisites
-• Access to a Unix-like system (Linux workstation or HPC server (or) login node)<br>
+• Access to a Unix-like system (Linux workstation or HPC server)<br>
 • Internet connectivity (required for environment setup and database downloads)<br>
 • Sufficient compute resources (CPU and memory requirements vary by module)<br>
 
@@ -17,39 +17,109 @@ NOSE is optimized for execution on Linux servers and HPC environments and is des
 • Ability to execute bash scripts (.sh files)<br>
 • All workflow execution is handled through Snakemake; no direct code modification is required.<br>
 
-## Create a Snakemake environment and installation
+## Anaconda & Snakemake Installation Guide (Linux)
 
-These instructions assume a Unix-like system with internet access.
-Only one environment setup method is required.
+This guide describes how to install **Anaconda Distribution** and set up a **dedicated Snakemake environment** using `conda-forge` and `bioconda`. These steps are suitable for Linux systems, including HPC servers.
 
-1.Install (Linux / HPC)
- ```bash
- ```
+---
 
-2. (Recommended) Install mamba for faster environment creation
-   ```bash
-       conda install -n base -c conda-forge mamba
-   ```
-4. Create and activate a Snakemake environment
-    Using conda:
-    ```bash
-       - conda env create -f snakemake env
-       - conda activate snakemake
-    ```
-    (or)
-    Using mamba (faster):
-   ```bash
-       - mamba env create -f snakemake env
-       - conda activate snakemake
-   ```
-6. Verify Snakemake is available:
-    ```bash
-       - snakemake --version
-    ```
-Note:
-- All NOSE modules are executed using this single Snakemake environment
-- The workflows rely on Snakemake’s --use-conda feature to automatically create rule-specific environments
-- Ensure conda or mamba is available within the active Snakemake environment
+## 1. Download Anaconda Distribution
+
+Download the latest Anaconda installer based on your Linux architecture.
+
+### For Linux x86_64
+
+```bash
+curl -O https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Linux-x86_64.sh
+```
+
+### For Linux ARM64 (aarch64)
+
+```bash
+curl -O https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Linux-aarch64.sh
+```
+
+## 2. (Recommended) Verify Installer Integrity
+
+To ensure the installer was not corrupted or tampered with, verify its **SHA-256 hash**.
+
+### Generate SHA-256 Hash
+
+```bash
+sha256sum <PATH_TO_INSTALLER_FILE>
+```
+
+Replace `<PATH_TO_INSTALLER_FILE>` with the path to the downloaded `.sh` file.
+
+### Verify Hash
+
+1. Note the generated SHA-256 hash from the output.
+2. Visit `https://repo.anaconda.com/archive`
+3. Locate the official SHA-256 hash for your installer.
+4. Compare both values.
+
+If the hashes match, the installer is safe to use.
+
+## 3. Install Anaconda Distribution
+
+Run the installer corresponding to your system architecture.
+
+### For Linux x86_64
+
+```bash
+bash ~/Anaconda3-2025.12-2-Linux-x86_64.sh
+```
+
+### For Linux ARM64
+
+```bash
+bash ~/Anaconda3-2025.12-2-Linux-aarch64.sh
+```
+Follow the on-screen instructions to complete the installation. After installation, restart the terminal or source your shell configuration file if required.
+
+
+## 4. Configure Conda Channels for Snakemake
+
+Snakemake must be installed from **conda-forge** and **bioconda**.
+
+Add and prioritize the required channels:
+
+```bash
+conda config --add channels conda-forge
+conda config --add channels bioconda
+conda config --set channel_priority strict
+```
+
+## 5. Create a Dedicated Snakemake Environment
+
+Create a separate conda environment for Snakemake:
+
+```bash
+conda create -n snakemake snakemake -y
+```
+
+Activate the environment:
+
+```bash
+conda activate snakemake
+```
+
+## 6. Verify Snakemake Installation
+
+Confirm that Snakemake is installed correctly:
+
+```bash
+snakemake --version
+```
+
+If the version is displayed, the installation is complete.
+
+## Notes
+
+* Using a dedicated environment avoids dependency conflicts.
+* This setup is compatible with local machines and HPC environments.
+* Always keep `conda-forge` and `bioconda` at higher priority for bioinformatics workflows.
+
 
 ----
 ## NOSE Modules
