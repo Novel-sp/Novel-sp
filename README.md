@@ -32,7 +32,6 @@ Two common routes are shown: using conda (Miniconda/Anaconda) or micromamba. Use
        conda install -n base -c conda-forge mamba
    ```
 4. Create and activate a Snakemake environment
-   - If an environment YAML for Snakemake is provided in `env/` (for example `env/snakemake.yaml`), create it:
     Using conda:
     ```bash
        - conda env create -f snakemake env
