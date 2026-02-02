@@ -35,13 +35,13 @@ Two common routes are shown: using conda (Miniconda/Anaconda) or micromamba. Use
    - If an environment YAML for Snakemake is provided in `env/` (for example `env/snakemake.yaml`), create it:
     Using conda:
     ```bash
-       - conda env create -f env/snakemake.yaml
+       - conda env create -f snakemake env
        - conda activate snakemake
     ```
     (or)
     Using mamba (faster):
    ```bash
-       - mamba env create -f env/snakemake.yaml
+       - mamba env create -f snakemake env
        - conda activate snakemake
    ```
 6. Verify Snakemake is available:
