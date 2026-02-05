@@ -43,4 +43,5 @@ Pathway reconstruction and metabolic profiling.</br>
 Module 5 - **[Functional Characterization](https://github.com/Novel-sp/Functional-Characterization)**<br>
 Biosynthetic gene clusters, resistance genes, and functional annotation.</br>
 
-Module 6 - Modeling
+Module 6 - **[Modeling](https://github.com/Novel-sp/Metabolic-model)**<br>
+
