@@ -41,7 +41,7 @@ Genome quality assessment and taxonomic classification for prokaryotic and eukar
 Module 2 - **[Novelty assessment through OGRI](https://github.com/Novel-sp/Genome-related-indices)**<br>
 Genome-related indices–based novelty assessment (ANI, dDDH, AAI).</br>
 
-Module 3 - **[Phylogenetic tree](https://github.com/Novel-sp/Phylogenetic-tree)**<br>
+Module 3 - **[Phylogenetic Tree](https://github.com/Novel-sp/Phylogenetic-tree)**<br>
 Phylogenetic reconstruction for candidate novel species.</br>
 
 Module 4 - **[Metabolic Mapping](https://github.com/Novel-sp/Metabolic-Mapping)**<br>
@@ -50,7 +50,7 @@ Pathway reconstruction and metabolic profiling.</br>
 Module 5 - **[Functional Characterization](https://github.com/Novel-sp/Functional-Characterization)**<br>
 Biosynthetic gene clusters, resistance genes, and functional annotation.</br>
 
-Module 6 - **[Modeling](https://github.com/Novel-sp/Metabolic-model)**<br>
+Module 6 - **[Metabolic Modeling](https://github.com/Novel-sp/Metabolic-model)**<br>
 Genome-scale metabolic model reconstruction and evaluation using CarveMe.
 
 
