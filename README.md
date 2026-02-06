@@ -3,14 +3,14 @@
 A Modular Snakemake Toolkit for Genome-Resolved Discovery
 NOSE is a scalable bioinformatics pipeline designed to identify and characterize novel microbial species. By integrating quality assessment, phylogenetics, and functional mapping into a unified Snakemake workflow, NOSE ensures your research is reproducible, automated, and ready for HPC environments.
 
-The Engine: Why Snakemake?
+## The Engine: Why Snakemake?
 NOSE operates on the logic of a DAG (Directed Acyclic Graph). Here is why that matters for your data:
 
-Directed: Logic flows sequentially; downstream analytical modules (e.g., Metabolic Mapping) are automatically triggered upon the successful generation of upstream dependencies.
+• Directed: Logic flows sequentially; downstream analytical modules (e.g., Metabolic Mapping) are automatically triggered upon the successful generation of upstream dependencies.
 
-Acyclic: The pipeline architecture prevents circular dependencies, ensuring a deterministic path from input (FASTA) to output (CSV/TSV).
+• Acyclic: The pipeline architecture prevents circular dependencies, ensuring a deterministic path from input (FASTA) to output (CSV/TSV).
 
-Graph-Based: Every rule represents a discrete computational node, allowing for granular error tracking and partial workflow resumption.
+• Graph-Based: Every rule represents a discrete computational node, allowing for granular error tracking and partial workflow resumption.
 
 ## Prerequisites
 ### Computational Prerequisites
@@ -23,10 +23,11 @@ Graph-Based: Every rule represents a discrete computational node, allowing for g
 • Ability to execute bash scripts (.sh files)<br>
 • All workflow execution is handled through Snakemake; no direct code modification is required.<br>
 
-----
+
 ## For Conda Installation and Setup 
 
-Getting Started: Follow the provided guide to install the Anaconda distribution and configure a dedicated Snakemake environment. This setup ensures a stable, reproducible workspace with all necessary bioinformatics channels pre-configured for the pipeline. - **[Anaconda and Snakemake Setup & Installation](https://github.com/Novel-sp/Conda-snakemake-setup)**<br>
+Getting Started: Follow the provided guide to install the Anaconda distribution and configure a dedicated Snakemake environment. This setup ensures a stable, reproducible workspace with all necessary bioinformatics channels pre-configured for the pipeline.<br>
+**[Anaconda and Snakemake Setup & Installation](https://github.com/Novel-sp/Conda-snakemake-setup)**<br>
 
 ----
 ## NOSE Modules
