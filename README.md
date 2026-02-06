@@ -44,4 +44,6 @@ Module 5 - **[Functional Characterization](https://github.com/Novel-sp/Functiona
 Biosynthetic gene clusters, resistance genes, and functional annotation.</br>
 
 Module 6 - **[Modeling](https://github.com/Novel-sp/Metabolic-model)**<br>
+Genome-scale metabolic model reconstruction and evaluation using CarveMe.
+
 
