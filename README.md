@@ -1,10 +1,16 @@
 # Novel Species Identification (NOSE)
 
-NOSE is a modular, Snakemake-based bioinformatics toolkit designed to support the identification and characterization of novel microbial species from genome-resolved datasets.
-The toolkit integrates multiple analysis stages-including genome quality assessment, taxonomic classification, novelty assessment, phylogenetics, metabolic mapping, and functional characterization-within a reproducible and scalable workflow.
+A Modular Snakemake Toolkit for Genome-Resolved Discovery
+NOSE is a scalable bioinformatics pipeline designed to identify and characterize novel microbial species. By integrating quality assessment, phylogenetics, and functional mapping into a unified Snakemake workflow, NOSE ensures your research is reproducible, automated, and ready for HPC environments.
 
-NOSE is optimized for execution on Linux servers and HPC environments and is designed to be usable by researchers without prior programming experience, relying on configuration-driven execution rather than manual scripting.
+The Engine: Why Snakemake?
+NOSE operates on the logic of a DAG (Directed Acyclic Graph). Here is why that matters for your data:
 
+Directed: Logic flows sequentially; downstream analytical modules (e.g., Metabolic Mapping) are automatically triggered upon the successful generation of upstream dependencies.
+
+Acyclic: The pipeline architecture prevents circular dependencies, ensuring a deterministic path from input (FASTA) to output (CSV/TSV).
+
+Graph-Based: Every rule represents a discrete computational node, allowing for granular error tracking and partial workflow resumption.
 
 ## Prerequisites
 ### Computational Prerequisites
