@@ -44,7 +44,7 @@ Genome-related indices–based novelty assessment (ANI, dDDH, AAI).</br>
 Module 3 - **[Phylogenetic Tree](https://github.com/Novel-sp/Phylogenetic-tree)**<br>
 Phylogenetic reconstruction for candidate novel species.</br>
 
-Module 4 - **[Metabolic Mapping](https://github.com/Novel-sp/Metabolic-Mapping)**<br>
+Module 4 - **[Metagenome Mapping Workflow](https://github.com/Novel-sp/Metagenome-mapping-workflow)**<br>
 Pathway reconstruction and metabolic profiling.</br>
 
 Module 5 - **[Functional Characterization](https://github.com/Novel-sp/Functional-Characterization)**<br>
