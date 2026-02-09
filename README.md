@@ -1,4 +1,4 @@
-# Novel Species Identification (NOSE)
+## Novel Species Identification (NOSE)
 
 A Modular Snakemake Toolkit for Genome-Resolved Discovery
 NOSE is a scalable bioinformatics pipeline designed to identify and characterize novel microbial species. By integrating quality assessment, phylogenetics, and functional mapping into a unified Snakemake workflow, NOSE ensures your research is reproducible, automated, and ready for HPC environments.
