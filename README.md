@@ -19,7 +19,7 @@ Module 1 - **[ Genome Summary and Classification Workflow](https://github.com/No
 Genome quality assessment and taxonomic classification for prokaryotic and eukaryotic genomes.</br>
 
 Module 2 - **[Novelty Assessment Through OGRI](https://github.com/Novel-sp/Genome-related-indices)**<br>
-Genome-related indices–based novelty assessment (ANI, AAI, POCP,..).</br>
+Genome-related indices–based novelty assessment (ANI, AAI, POCP,..)</br>
 
 Module 3 - **[Phylogenetic Tree](https://github.com/Novel-sp/Phylogenetic-tree)**<br>
 Phylogenetic reconstruction for candidate novel species.</br>
