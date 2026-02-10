@@ -18,19 +18,19 @@ Click on a module to view detailed usage instructions.
 Module 1 - **[ Genome Summary and Classification Workflow](https://github.com/Novel-sp/Genome-summary-and-classification-workflow)** <br>
 Genome quality assessment and taxonomic classification for prokaryotic and eukaryotic genomes.</br>
 
-Module 2 - **[Novelty Assessment Through OGRI](https://github.com/Novel-sp/Genome-related-indices)**<br>
-Genome-related indices–based novelty assessment (ANI, AAI, POCP,..)</br>
+Module 2 - **[Overall Genome-Relatedness Indices Workflow](https://github.com/Novel-sp/Genome-related-indices)**<br>
+Genome-related indices-based novelty assessment through OGRI (ANI, AAI, POCP,..)</br>
 
-Module 3 - **[Phylogenetic Tree](https://github.com/Novel-sp/Phylogenetic-tree)**<br>
+Module 3 - **[Phylogenetic Tree Workflow](https://github.com/Novel-sp/Phylogenetic-tree)**<br>
 Phylogenetic reconstruction for candidate novel species.</br>
 
 Module 4 - **[Metagenome Mapping Workflow](https://github.com/Novel-sp/Metagenome-mapping-workflow)**<br>
 Pathway reconstruction and metabolic profiling.</br>
 
-Module 5 - **[Functional Characterization](https://github.com/Novel-sp/Functional-Characterization)**<br>
+Module 5 - **[Functional Characterization Workflow](https://github.com/Novel-sp/Functional-Characterization)**<br>
 Biosynthetic gene clusters, resistance genes, and functional annotation.</br>
 
-Module 6 - **[Metabolic Modeling](https://github.com/Novel-sp/Metabolic-model)**<br>
+Module 6 - **[Metabolic Modeling Workflow](https://github.com/Novel-sp/Metabolic-model)**<br>
 Genome-scale metabolic model reconstruction and evaluation using CarveMe.
 
 
